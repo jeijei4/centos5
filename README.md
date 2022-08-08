@@ -12,6 +12,19 @@ tlsv1 is not accpted by vault repository, if you use vault repository, yum upadt
 
 ## Usage
 
+1. Replace <code>CentOS-Base.repo</code> in <code>/etc/yum.repos.d/</code>
+2. Edit <code>/etc/yum/pluginconf.d/fastestmirror.conf</code> and put <code>enabled=0</code>
+
+3. Execute:
+```shell
+rm -rf /var/cache/yum/*
+yum clean all
+yum makecache
+yum update
+```
+
+## Usage with docker
+
 Use in command-line.
 
 ```
